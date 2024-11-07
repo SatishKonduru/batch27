@@ -1,0 +1,28 @@
+<div style="display: flex; justify-content: center;">
+  <p style="font-size: 25px; color:brown">Style Binding</p>
+</div>
+<mat-divider></mat-divider>
+
+<div style="color:blue">
+  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Enim, numquam? Esse ab laborum amet incidunt reiciendis, voluptatum necessitatibus, eligendi perferendis illo, neque temporibus vel tempora ratione dolor modi in! Ipsum?
+</div>
+
+<div [style.color]="'red'">
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque repellendus animi omnis velit fuga soluta adipisci sapiente magni aperiam odio facere doloribus dolore, deleniti pariatur ratione assumenda voluptatibus hic obcaecati.
+</div>
+
+<div [style.color]="textColor">
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo sunt hic, ratione reprehenderit repellat molestias dolorem velit incidunt eum cum soluta beatae voluptate laborum excepturi fugit similique quos quae consequuntur?
+</div>
+
+<div [style.fontSize]="textSize">
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi quos beatae architecto in expedita non sint repudiandae consectetur nulla quo temporibus, a ex numquam laudantium neque? Sint aliquid suscipit architecto!
+</div>
+
+<div [ngStyle]="myStyle">
+  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam ab, officiis animi quae in dicta!
+</div>
+
+<div [ngStyle]=" myValue <= 10 ? {color: 'green'} : {color: 'red'}">
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero quaerat corrupti recusandae nam, doloremque sed aliquid. Quasi atque quod repellendus?
+</div>
