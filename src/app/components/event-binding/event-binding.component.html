@@ -1,0 +1,98 @@
+<div style="display: flex; justify-content: center;">
+  <p style="font-size: 25px; color:brown">Event Binding</p>
+</div>
+<mat-divider></mat-divider>
+
+<!-- Click Event -->
+<div style="display: flex; justify-content: center; margin-top: 10px;">
+<button mat-button (click)="onButtonClick()">Click Me</button>
+<!-- <button mat-flat-button >Click Me</button>
+<button mat-stroked-button >Click Me</button>
+<button mat-raised-button >Click Me</button> -->
+</div>
+<div style="font-size: 30px; text-align: center;">
+{{message}}
+</div>
+
+<mat-divider></mat-divider>
+
+<!-- Double Click Event -->
+<div style="display: flex; justify-content: center; margin-top: 10px;">
+  <button mat-stroked-button (dblclick)="onDoubleClick()">Double Click Me</button>
+ </div>
+
+ <div  style="font-size: 30px; text-align: center;">
+  {{doubleClickMsg}}
+ </div>
+
+ <mat-divider></mat-divider>
+
+<!-- Mouse hover Event -->
+<div style="display: flex; justify-content: center; margin-top: 10px;">
+  <button mat-stroked-button (mouseover)="onMouseOver()">Hover over this Button</button>
+ </div>
+ <div  style="font-size: 30px; text-align: center;">
+  {{hoverMsg}}
+ </div>
+
+ <mat-divider></mat-divider>
+<!-- Keyboard Event -->
+<div style="display: flex; justify-content: center; margin-top: 10px;">
+  <mat-form-field appearance="outline">
+    <input matInput placeholder="press any key" (keydown)="onKeyDown($event)" >
+  </mat-form-field>
+
+ </div>
+ <div  style="font-size: 30px; text-align: center;">
+{{keyMsg}}
+ </div>
+ <mat-divider></mat-divider>
+<!-- Focus Event -->
+
+<div style="display: flex; justify-content: center; margin-top: 10px;">
+  <mat-form-field appearance="outline">
+    <input matInput placeholder="Focus on Me" (focus)="onFocus()" (blur)="onBlur()">
+  </mat-form-field>
+
+ </div>
+ <div  style="font-size: 30px; text-align: center;">
+{{focusBlurMsg}}
+ </div>
+
+ <mat-divider></mat-divider>
+
+<!-- Change Event -->
+<div style="display: flex; justify-content: center; margin-top: 10px;">
+  <mat-form-field appearance="outline">
+    <mat-label>Select one</mat-label>
+   <mat-select (selectionChange)="onChange($event)">
+
+    <mat-option value="Option1">Option1</mat-option>
+    <mat-option value="Option2">Option2</mat-option>
+    <mat-option value="Option3">Option3</mat-option>
+   </mat-select>
+  </mat-form-field>
+
+ </div>
+ <div  style="font-size: 30px; text-align: center;">
+{{selectedOption}}
+ </div>
+
+ <mat-divider></mat-divider>
+
+ <div style="display: flex; justify-content: center; margin-top: 10px;" (window:resize)="onResize($event)">
+Resize this window to see the changes
+</div>
+<div  style="font-size: 30px; text-align: center;">
+  {{resizeMsg}}
+   </div>
+   <mat-divider></mat-divider>
+
+  <div style="display: flex; justify-content: center; margin-top: 10px;">
+    <p (copy)="onCopy()" >Copy this text</p>
+  </div>
+  <div  style="font-size: 30px; text-align: center;">
+    {{copyMsg}}
+     </div>
+
+

@@ -5,6 +5,7 @@ import { InterpolationComponent } from './components/interpolation/interpolation
 import { PBindingComponent } from './components/p-binding/p-binding.component';
 import { StyleBindingComponent } from './components/style-binding/style-binding.component';
 import { ClassBindingComponent } from './components/class-binding/class-binding.component';
+import { EventBindingComponent } from './components/event-binding/event-binding.component';
 
 @Component({
   selector: 'app-root',
@@ -16,6 +17,7 @@ import { ClassBindingComponent } from './components/class-binding/class-binding.
     PBindingComponent,
     StyleBindingComponent,
     ClassBindingComponent,
+    EventBindingComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
