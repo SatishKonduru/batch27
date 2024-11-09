@@ -1,0 +1,19 @@
+<div style="display: flex; justify-content: center;">
+  <p style="font-size: 25px; color:brown">Two-Way Data binding</p>
+</div>
+<mat-divider></mat-divider>
+<div class="container" style="display: flex; flex-direction: column; gap: 20px">
+  <div style="display: flex; justify-content: center; margin-top: 10px;">
+    <mat-form-field appearance="outline">
+      <mat-label>Enter Something...</mat-label>
+      <input matInput [(ngModel)] = "myMsg">
+    </mat-form-field>
+  </div>
+  <div style="display: flex; justify-content: center;">
+    <p style="font-size: 50px; color: blue">
+      {{myMsg}}
+    </p>
+  </div>
+</div>
+
+ 
