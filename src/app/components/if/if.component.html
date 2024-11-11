@@ -1,0 +1,32 @@
+<div style="display: flex; justify-content: center;">
+  <p style="font-size: 25px; color:brown">&#64;if</p>
+</div>
+<mat-divider></mat-divider>
+
+<div style="display: flex; justify-content: center; margin-top: 10px; ">
+  <!-- <p *ngIf="show">Name: {{student.name}}</p> -->
+  <!-- @if(show){
+    <p>Name: {{student.name}}</p>
+  }
+  @else {
+    <p>No Studetns are available</p>
+  }
+</div> -->
+
+@if(true){
+  <p>TEST 1</p>
+  <p>TEST 1</p>
+  <p>TEST 1</p>
+}
+
+@else if (false) {
+  <p>TEST 2</p>
+  <p>TEST 2</p>
+  <p>TEST 2</p>
+
+}
+@else {
+  <p>TEST 3</p>
+  <p>TEST 3</p>
+  <p>TEST 3</p>
+}
