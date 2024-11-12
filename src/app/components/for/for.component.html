@@ -1,0 +1,66 @@
+<div style="display: flex; justify-content: center;">
+  <p style="font-size: 25px; color:brown">&#64; for</p>
+</div>
+<mat-divider></mat-divider>
+<!-- <div *ngFor="let x of numbers">
+  <div style="font-size: 25px; color: brown">{{x}}</div>
+</div> -->
+
+
+<!-- @for(x of numbers; track x){
+  <div style="font-size: 25px; color: brown">{{x}}</div>
+}
+<mat-divider></mat-divider>
+
+@for(x of numbers; track $index){
+  <div style="font-size: 25px; color: brown">{{x}}</div>
+}
+<mat-divider></mat-divider> -->
+
+@for(p of persons; track p; let i = $index){
+  <div style="font-size: 25px; color: brown; display: flex; justify-content: center;">
+    {{i}}  -> {{p.name}}  -> {{p.age}}
+  </div>
+}
+
+<mat-divider></mat-divider>
+
+@for(p of persons; track p; let f = $first){
+  <div style="font-size: 25px; color: brown; display: flex; justify-content: center;">
+    {{f}}  -> {{p.name}}  -> {{p.age}}
+  </div>
+}
+
+<mat-divider></mat-divider>
+
+@for(p of persons; track p; let l = $last){
+  <div style="font-size: 25px; color: brown; display: flex; justify-content: center;">
+    {{l}}  -> {{p.name}}  -> {{p.age}}
+  </div>
+}
+
+<mat-divider></mat-divider>
+
+@for(p of persons; track p; let e = $even){
+  <div style="font-size: 25px; color: brown; display: flex; justify-content: center;">
+    {{e}}  -> {{p.name}}  -> {{p.age}}
+  </div>
+}
+
+<mat-divider></mat-divider>
+
+@for(p of persons; track p; let o = $odd){
+  <div style="font-size: 25px; color: brown; display: flex; justify-content: center;">
+    {{o}}  -> {{p.name}}  -> {{p.age}}
+  </div>
+}
+@empty {
+  <h2>No Data Found</h2>
+}
+
+
+
+
+
+
+

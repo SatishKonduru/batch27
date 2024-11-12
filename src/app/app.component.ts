@@ -9,6 +9,8 @@ import { EventBindingComponent } from './components/event-binding/event-binding.
 import { TempRefVariablesComponent } from './components/temp-ref-variables/temp-ref-variables.component';
 import { TwoWayDataBindingComponent } from './components/two-way-data-binding/two-way-data-binding.component';
 import { IfComponent } from './components/if/if.component';
+import { SwitchCaseComponent } from './components/switch-case/switch-case.component';
+import { ForComponent } from './components/for/for.component';
 
 @Component({
   selector: 'app-root',
@@ -24,6 +26,8 @@ import { IfComponent } from './components/if/if.component';
     TempRefVariablesComponent,
     TwoWayDataBindingComponent,
     IfComponent,
+    SwitchCaseComponent,
+    ForComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
