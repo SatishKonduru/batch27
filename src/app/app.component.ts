@@ -11,6 +11,7 @@ import { TwoWayDataBindingComponent } from './components/two-way-data-binding/tw
 import { IfComponent } from './components/if/if.component';
 import { SwitchCaseComponent } from './components/switch-case/switch-case.component';
 import { ForComponent } from './components/for/for.component';
+import { SenderComponent } from './components/sender/sender.component';
 
 @Component({
   selector: 'app-root',
@@ -28,6 +29,7 @@ import { ForComponent } from './components/for/for.component';
     IfComponent,
     SwitchCaseComponent,
     ForComponent,
+    SenderComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
