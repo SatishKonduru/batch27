@@ -12,6 +12,7 @@ import { IfComponent } from './components/if/if.component';
 import { SwitchCaseComponent } from './components/switch-case/switch-case.component';
 import { ForComponent } from './components/for/for.component';
 import { SenderComponent } from './components/sender/sender.component';
+import { ViewChildComponent } from './components/view-child/view-child.component';
 
 @Component({
   selector: 'app-root',
@@ -30,6 +31,7 @@ import { SenderComponent } from './components/sender/sender.component';
     SwitchCaseComponent,
     ForComponent,
     SenderComponent,
+    ViewChildComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',

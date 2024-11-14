@@ -1,12 +1,12 @@
-<div style="display: flex; justify-content: center;">
-  <p style="font-size: 25px; color:brown">Component Communication</p>
-</div>
-<mat-divider></mat-divider>
+<app-topic [topicName]="topic"></app-topic>
 
-<div style="display: flex; justify-content: center; margin-top: 10px;">
-  <h4>Sender Component: </h4>
+<div style="display: flex; justify-content: center; margin-top: 10px">
+  <h4>Sender Component:</h4>
 </div>
 
-<app-receiver (reply)="incomingData = $event"  [postMan]="message"></app-receiver>
+<app-receiver
+  (reply)="incomingData = $event"
+  [postMan]="message"
+></app-receiver>
 
-<h2>{{incomingData}}</h2>
+<h2>{{ incomingData }}</h2>

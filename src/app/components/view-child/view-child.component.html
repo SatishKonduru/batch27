@@ -1,0 +1,19 @@
+<app-topic [topicName]="'ViewChild()'"></app-topic>
+
+<div
+  style="
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    justify-content: center;
+    align-items: center;
+  "
+>
+  <mat-form-field appearance="outline">
+    <mat-label>Enter something</mat-label>
+    <input matInput #input />
+  </mat-form-field>
+  <!-- <button mat-raised-button (click)="getValue(input)">Get Value</button> -->
+  <button mat-raised-button (click)="getValue()">Get Value</button>
+</div>
+<h3>{{ inputValue }}</h3>
