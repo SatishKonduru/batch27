@@ -15,6 +15,8 @@ import { SenderComponent } from './components/sender/sender.component';
 import { ViewChildComponent } from './components/view-child/view-child.component';
 import { ParentComponent } from './components/parent/parent.component';
 import { ArrayMethodsComponent } from './components/array-methods/array-methods.component';
+import { ContentParentComponent } from './components/content-parent/content-parent.component';
+import { ContentChildComponent } from './components/content-child/content-child.component';
 
 @Component({
   selector: 'app-root',
@@ -36,6 +38,8 @@ import { ArrayMethodsComponent } from './components/array-methods/array-methods.
     ViewChildComponent,
     ParentComponent,
     ArrayMethodsComponent,
+    ContentParentComponent,
+    ContentChildComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
