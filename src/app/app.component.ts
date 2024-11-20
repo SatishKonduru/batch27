@@ -17,6 +17,7 @@ import { ParentComponent } from './components/parent/parent.component';
 import { ArrayMethodsComponent } from './components/array-methods/array-methods.component';
 import { ContentParentComponent } from './components/content-parent/content-parent.component';
 import { ContentChildComponent } from './components/content-child/content-child.component';
+import { TopicComponent } from './components/topic/topic.component';
 
 @Component({
   selector: 'app-root',
@@ -40,6 +41,7 @@ import { ContentChildComponent } from './components/content-child/content-child.
     ArrayMethodsComponent,
     ContentParentComponent,
     ContentChildComponent,
+    TopicComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',

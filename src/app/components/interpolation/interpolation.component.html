@@ -1,34 +1,22 @@
-<div style="display: flex; justify-content: center;">
-  <p style="font-size: 25px; color:brown">Interpolation</p>
+<div style="display: flex; justify-content: center">
+  <p style="font-size: 25px; color: brown">Interpolation</p>
 </div>
 <mat-divider></mat-divider>
 
-<div>
-   My Name: {{name}}
-</div>
-<div>
-  Age: {{age}}
-</div>
+<div>My Name: {{ name }}</div>
+<div>Age: {{ age }}</div>
 
 <div>
-  {{"Name is: " + name}}
+  {{ "Name is: " + name }}
 </div>
 <div>
- {{age != 10}}
+  {{ age != 10 }}
 </div>
 
-<div>
-  My name by using method call: {{getMyName()}}
-</div>
-
+<div>My name by using method call: {{ getMyName() }}</div>
 
 <!-- Don'ts -->
 
 <div>
-  {{age }}
+  {{ age }}
 </div>
-
-
-
-
-
