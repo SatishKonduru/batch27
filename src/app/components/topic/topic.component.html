@@ -5,3 +5,13 @@
 <div style="display: flex; justify-content: center" appBackground>
   <h2>Custom directives</h2>
 </div>
+
+<div
+  style="display: flex; justify-content: center; margin-top: 10px"
+  appTextEvent
+  (textEvent)="handleTextEvent($event)"
+>
+  <input />
+</div>
+<h3>Event: {{ lastEvent.type }}</h3>
+<h3>Content: {{ lastEvent.content }}</h3>

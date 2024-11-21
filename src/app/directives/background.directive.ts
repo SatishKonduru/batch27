@@ -1,6 +1,7 @@
 import {
   Directive,
   ElementRef,
+  HostBinding,
   HostListener,
   OnInit,
   Renderer2,
@@ -22,8 +23,18 @@ export class BackgroundDirective implements OnInit {
     //   `background-color: orangered; color:white; font-weight: bold; display: flex; justify-content: center`
     // );
   }
+  @HostBinding('style.backgroundColor') bg = 'green';
 
   @HostListener('mouseenter') mEnter() {
-    this._renderer.addClass(this._el.nativeElement, 'onHover');
+    // this._renderer.addClass(this._el.nativeElement, 'onHover');
+    this.bg = 'gold';
   }
+
+  @HostListener('mouseleave') mLeave() {
+    this.bg = 'orange';
+  }
+
+  // @HostListener('keydown', ['$event']) onKeyDown(e: KeyboardEvent) {
+  //   console.log('Pressed Key: ', e.key);
+  // }
 }
