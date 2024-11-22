@@ -1,1 +1,27 @@
-<h1>course-details works!</h1>
+<div class="container mt-3 d-flex justify-content-center">
+  <div class="card w-50">
+    <div class="card-header">Course Details</div>
+    <div class="card-body">
+      <table class="table">
+        <thead>
+          <tr>
+            @for(key of courseKeys; track key){
+            <th>{{ key }}</th>
+            }
+          </tr>
+        </thead>
+        <tbody>
+          @for(course of courseList; track course){
+          <tr>
+            @for(key of courseKeys; track key){
+            <td>
+              {{ course[key] }}
+            </td>
+            }
+          </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
