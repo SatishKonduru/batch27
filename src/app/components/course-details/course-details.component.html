@@ -12,9 +12,9 @@
         </thead>
         <tbody>
           @for(course of courseList; track course){
-          <tr>
+          <tr (click)="onSelect(course)">
             @for(key of courseKeys; track key){
-            <td>
+            <td [class.selected]="getSelected(course)">
               {{ course[key] }}
             </td>
             }

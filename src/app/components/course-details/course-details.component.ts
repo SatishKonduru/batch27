@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { CloseScrollStrategy } from '@angular/cdk/overlay';
+import { Component, inject, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-course-details',
@@ -8,6 +10,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrl: './course-details.component.css',
 })
 export class CourseDetailsComponent implements OnInit {
+  // constructor(private _router: Router){}
+  private _router = inject(Router);
+  private _activatedRoute = inject(ActivatedRoute);
+  courseId: any;
+  selected = 'selected ';
   courseKeys = [];
   courseList = [
     { id: 1, name: 'Angular', tutor: 'Satish' },
@@ -22,6 +29,20 @@ export class CourseDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.courseKeys = Object.keys(this.courseList[0]);
-    console.log(this.courseKeys);
+    // console.log(this.courseKeys);
+    this._activatedRoute.paramMap.subscribe((p) => {
+      if (p) {
+        this.courseId = p.get('id');
+      }
+    });
+  }
+
+  onSelect(course: any) {
+    // console.log('Selected Course Details: ', course);
+    this._router.navigate(['/selectedCourse', JSON.stringify(course)]);
+  }
+
+  getSelected(c: any) {
+    return this.courseId == c.id;
   }
 }
