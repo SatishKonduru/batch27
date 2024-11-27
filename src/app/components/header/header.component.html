@@ -4,9 +4,9 @@
   <span><mat-icon>person</mat-icon></span>
 </mat-toolbar>
 
-<mat-toolbar style="background-color: whitesmoke; color: white; height: 50px">
+<!-- <mat-toolbar style="background-color: whitesmoke; color: white; height: 50px">
   <span>
-    <!-- <button mat-raised-button routerLink="/course">Course Names</button> -->
+
     <button
       mat-raised-button
       [routerLink]="'/course'"
@@ -15,7 +15,7 @@
     >
       Course Names
     </button>
-    <!-- <button mat-raised-button routerLink="/courseDetails"> -->
+
     <button
       mat-raised-button
       [routerLink]="'/courseDetails'"
@@ -25,4 +25,14 @@
       Course Details
     </button>
   </span>
+</mat-toolbar> -->
+
+<mat-toolbar
+  style="background-color: lavenderblush; height: 30px; justify-content: right"
+>
+  <span><a routerLink="home" fragment="aboutus">About Us</a></span>
+  <span><a routerLink="home" fragment="services">Services</a></span>
+  <span><a routerLink="home" fragment="products">Products</a></span>
+  <span><a routerLink="home" fragment="careers">Careers</a></span>
+  <span><a routerLink="home" fragment="contactus">Contact Us</a></span>
 </mat-toolbar>
