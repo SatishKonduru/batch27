@@ -11,3 +11,6 @@ span {
   font-size: 16px;
   cursor: pointer;
 }
+span a {
+  text-decoration: none;
+}

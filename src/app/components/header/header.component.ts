@@ -22,12 +22,12 @@ import { ActivatedRoute, RouterModule } from '@angular/router';
 export class HeaderComponent implements OnInit {
   private _activatedRoute = inject(ActivatedRoute);
   ngOnInit(): void {
-    this._activatedRoute.fragment.subscribe((data) => {
-      this.jummToSection(data);
-    });
+    // this._activatedRoute.fragment.subscribe((data) => {
+    //   this.jummToSection(data);
+    // });
   }
 
-  jummToSection(section: any) {
-    document.getElementById(section).scrollIntoView({ behavior: 'smooth' });
-  }
+  // jummToSection(section: any) {
+  //   document.getElementById(section).scrollIntoView({ behavior: 'smooth' });
+  // }
 }

@@ -4,18 +4,28 @@ import { ServicesComponent } from '../services/services.component';
 import { ProductsComponent } from '../products/products.component';
 import { CareersComponent } from '../careers/careers.component';
 import { ContactusComponent } from '../contactus/contactus.component';
+import { DemoComponent } from '../demo/demo.component';
+import { MatButtonModule } from '@angular/material/button';
+import { CommonModule } from '@angular/common';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 @Component({
   selector: 'app-home',
   standalone: true,
   imports: [
-    AboutusComponent,
-    ServicesComponent,
-    ProductsComponent,
-    CareersComponent,
-    ContactusComponent,
+    MatButtonModule,
+    CommonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    DemoComponent,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
-export class HomeComponent {}
+export class HomeComponent {
+  inputValue;
+  onClick(value: any) {
+    this.inputValue = value;
+  }
+}
