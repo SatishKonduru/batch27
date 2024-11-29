@@ -24,11 +24,11 @@
   <div class="mt-3">
     <mat-form-field appearance="outline">
       <mat-label>Enter....</mat-label>
-      <input matInput #input />
+      <input matInput #input [(ngModel)]="inputValue" />
     </mat-form-field>
   </div>
   <div>
-    <button mat-raised-button (click)="onClick(input.value)">Click Me</button>
+    <!-- <button mat-raised-button (click)="onClick(input.value)">Click Me</button> -->
   </div>
 
   <app-demo [message]="inputValue"></app-demo>
