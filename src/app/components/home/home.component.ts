@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AboutusComponent } from '../aboutus/aboutus.component';
 import { ServicesComponent } from '../services/services.component';
 import { ProductsComponent } from '../products/products.component';
@@ -25,8 +25,18 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
   inputValue = '';
+  check = 0
+
+  ngOnInit(): void {
+    // setInterval(() => {
+    //   this.check++
+    //   console.log("Check Value: ", this.check)
+    // }, 1000)
+  }
+
+
   onClick(value: any) {
     this.inputValue = value;
     // this.inputValue.push(value);
