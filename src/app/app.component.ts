@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
 import { InterpolationComponent } from './components/interpolation/interpolation.component';
@@ -18,6 +18,7 @@ import { ArrayMethodsComponent } from './components/array-methods/array-methods.
 import { ContentParentComponent } from './components/content-parent/content-parent.component';
 import { ContentChildComponent } from './components/content-child/content-child.component';
 import { TopicComponent } from './components/topic/topic.component';
+import { HomeComponent } from "./components/home/home.component";
 
 @Component({
   selector: 'app-root',
@@ -42,9 +43,11 @@ import { TopicComponent } from './components/topic/topic.component';
     ContentParentComponent,
     ContentChildComponent,
     TopicComponent,
-  ],
+    HomeComponent
+],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
+
 })
 export class AppComponent {
   title = 'batch27';
