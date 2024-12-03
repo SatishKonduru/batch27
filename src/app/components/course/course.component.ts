@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject, OnDestroy, OnInit } from '@angular/core';
+import { CourseService } from '../../services/course.service';
 
 @Component({
   selector: 'app-course',
@@ -7,11 +8,25 @@ import { Component } from '@angular/core';
   templateUrl: './course.component.html',
   styleUrl: './course.component.css',
 })
-export class CourseComponent {
-  courseList = [
-    { id: 1, name: 'Angular', tutor: 'Satish' },
-    { id: 2, name: 'Angular Material', tutor: 'Satish Konduru' },
-    { id: 3, name: 'Bootstrap', tutor: 'RSK' },
-    { id: 4, name: 'NodeJS', tutor: 'Renu' },
-  ];
+export class CourseComponent implements OnInit{
+  courseList = [];
+  private _courseService = inject(CourseService)
+
+  ngOnInit(): void {
+    this.getCourseNames()
+  }
+  getCourseNames(){
+    this._courseService.courseNames().subscribe({
+      next: (res: any) => {
+        this.courseList = res
+      },
+      error: (err: any ) => {
+        console.log("Error while fetching course names: ", err)
+      }
+    })
+  }
+
+
+
+
 }

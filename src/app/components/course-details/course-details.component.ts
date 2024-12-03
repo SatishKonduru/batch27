@@ -1,6 +1,7 @@
 import { CloseScrollStrategy } from '@angular/cdk/overlay';
 import { Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { CourseService } from '../../services/course.service';
 
 @Component({
   selector: 'app-course-details',
@@ -15,26 +16,30 @@ export class CourseDetailsComponent implements OnInit {
   private _activatedRoute = inject(ActivatedRoute);
   courseId: any;
   selected = 'selected ';
+  couseService = inject(CourseService)
   courseKeys = [];
-  courseList = [
-    { id: 1, name: 'Angular', tutor: 'Satish' },
-    {
-      id: 2,
-      name: 'Angular Material',
-      tutor: 'Satish Konduru',
-    },
-    { id: 3, name: 'Bootstrap', tutor: 'RSK' },
-    { id: 4, name: 'NodeJS', tutor: 'Renu' },
-  ];
+  courseList = [];
 
   ngOnInit(): void {
-    this.courseKeys = Object.keys(this.courseList[0]);
+    this.getCourseDetails()
+    // this.courseKeys = Object.keys(this.courseList[0]);
     // console.log(this.courseKeys);
     this._activatedRoute.paramMap.subscribe((p) => {
       if (p) {
         this.courseId = p.get('id');
       }
     });
+  }
+
+  getCourseDetails(){
+    this.couseService.courseNames().subscribe({
+      next: (res: any) => {
+        this.courseList = res
+        this.courseKeys = Object.keys(this.courseList[0])
+      },
+      error: (err: any) =>
+        console.log("Error while getting course Details: ", err)
+    })
   }
 
   onSelect(course: any) {
