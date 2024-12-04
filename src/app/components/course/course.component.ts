@@ -22,7 +22,8 @@ export class CourseComponent implements OnInit{
       },
       error: (err: any ) => {
         console.log("Error while fetching course names: ", err)
-      }
+      },
+      complete: () => {console.log("Request Completed")}
     })
   }
 
