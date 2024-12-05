@@ -5,6 +5,9 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { HomeComponent } from './components/home/home.component';
 import { SelectedCourseComponent } from './components/selected-course/selected-course.component';
 import { SelectedCourseDetailsComponent } from './components/selected-course-details/selected-course-details.component';
+import { LoginComponent } from './components/login/login.component';
+import { UserDashboardComponent } from './components/user-dashboard/user-dashboard.component';
+import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
 
 export const routes: Routes = [
   {
@@ -43,6 +46,23 @@ export const routes: Routes = [
     path: 'selectedCourse', //Query params
     component: SelectedCourseComponent,
   },
+
+  {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
+    path: 'userDashboard',
+    component: UserDashboardComponent
+  },
+  {
+    path: 'adminDashboard',
+    component: AdminDashboardComponent
+  },
+
+
+
+
   {
     path: '**',
     component: PageNotFoundComponent,
