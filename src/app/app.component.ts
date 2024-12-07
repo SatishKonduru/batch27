@@ -19,6 +19,8 @@ import { ContentParentComponent } from './components/content-parent/content-pare
 import { ContentChildComponent } from './components/content-child/content-child.component';
 import { TopicComponent } from './components/topic/topic.component';
 import { HomeComponent } from "./components/home/home.component";
+import { BuiltInPipesComponent } from "./components/built-in-pipes/built-in-pipes.component";
+import { CustomPipeComponent } from "./components/custom-pipe/custom-pipe.component";
 
 @Component({
   selector: 'app-root',
@@ -43,7 +45,9 @@ import { HomeComponent } from "./components/home/home.component";
     ContentParentComponent,
     ContentChildComponent,
     TopicComponent,
-    HomeComponent
+    HomeComponent,
+    BuiltInPipesComponent,
+    CustomPipeComponent
 ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
