@@ -64,8 +64,8 @@
           <div class="row">
             <div class="col-12">
               <label>Gender</label>
-              <mat-radio-group name="gender" ngModel>
-                <mat-radio-button checked value="Male">Male</mat-radio-button>
+              <mat-radio-group name="gender" [(ngModel)]="gender">
+                <mat-radio-button value="Male" checked>Male</mat-radio-button>
                 <mat-radio-button value="Female">Female</mat-radio-button>
                 <mat-radio-button value="other">Prefer Not to Say</mat-radio-button>
               </mat-radio-group>

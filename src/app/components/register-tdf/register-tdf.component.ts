@@ -18,6 +18,7 @@ import { FormsModule, NgForm } from '@angular/forms';
   styleUrl: './register-tdf.component.css'
 })
 export class RegisterTDFComponent {
+  gender = 'Male'
 
   onSubmit(form: NgForm ){
     //  console.log(form.value)
