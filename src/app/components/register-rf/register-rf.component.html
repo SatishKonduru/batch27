@@ -1,13 +1,13 @@
 <div class="container w-50 mt-3 mx-auto">
   <div class="col-12 mat-elevation-z10 p-2">
-    <mat-toolbar style="background-color: pink; width: 100%;">Register with Template Driven Forms(TDF)</mat-toolbar>
-    <form #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)">
+    <mat-toolbar style="background-color: pink; width: 100%;">Register with Reactive Form(RF)</mat-toolbar>
+    <form [formGroup]="registerForm">
       <!-- 1st row -->
        <div class="row d-flex mt-3">
         <div class="col-6">
           <mat-form-field appearance="outline" style="width: 100%;" >
             <mat-label>First Name: </mat-label>
-            <input matInput placeholder="Enter First Name " name="firstName" ngModel required>
+            <input matInput placeholder="Enter First Name " formControlName="firstName"  >
             <mat-error>
               @if(registerForm.controls.firstName?.touched){
                 First Name required
@@ -18,7 +18,7 @@
         <div class="col-6">
           <mat-form-field appearance="outline" style="width: 100%;">
             <mat-label>Last Name: </mat-label>
-            <input matInput placeholder="Enter Last Name " name="lastName" ngModel>
+            <input matInput placeholder="Enter Last Name " formControlName="lastName" >
           </mat-form-field>
         </div>
        </div>
@@ -27,7 +27,7 @@
           <div class="col-12">
             <mat-form-field appearance="outline" style="width: 100%;">
               <mat-label>Email: </mat-label>
-              <input matInput placeholder="Enter Email " name="email" ngModel required email>
+              <input matInput placeholder="Enter Email " formControlName="email"   >
               <mat-error>
                 @if(registerForm.controls.email?.touched){
                     @if(registerForm.controls.email.errors?.required){
@@ -47,13 +47,13 @@
           <div class="col-6">
             <mat-form-field appearance="outline" style="width: 100%;">
               <mat-label>Phone No: </mat-label>
-              <input matInput placeholder="Enter Phone Number " name="phone" ngModel>
+              <input matInput placeholder="Enter Phone Number " formControlName="phone" >
             </mat-form-field>
           </div>
           <div class="col-6">
             <mat-form-field appearance="outline" style="width: 100%;">
               <mat-label>Date of Birth: </mat-label>
-              <input matInput [matDatepicker]="picker" name="dob" ngModel>
+              <input matInput [matDatepicker]="picker" formControlName="dob" >
               <mat-hint>MM/DD/YYYY</mat-hint>
               <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
               <mat-datepicker #picker></mat-datepicker>
@@ -64,7 +64,7 @@
           <div class="row">
             <div class="col-12">
               <label>Gender</label>
-              <mat-radio-group name="gender" [(ngModel)]="gender">
+              <mat-radio-group formControlName="gender">
                 <mat-radio-button value="Male" checked>Male</mat-radio-button>
                 <mat-radio-button value="Female">Female</mat-radio-button>
                 <mat-radio-button value="other">Prefer Not to Say</mat-radio-button>
@@ -77,55 +77,55 @@
             <label>Address:</label>
             <mat-form-field appearance="outline">
               <mat-label>Address 1</mat-label>
-              <input matInput placeholder="Enter Address line 1" name="addr1" ngModel>
+              <input matInput placeholder="Enter Address line 1" formControlName="address1" >
             </mat-form-field>
            </div>
            <!-- 6rh row -->
            <div class="row" ngModelGroup="address">
             <mat-form-field appearance="outline">
               <mat-label>Address 2</mat-label>
-              <input matInput placeholder="Enter Address line 2" name="addr2" ngModel>
+              <input matInput placeholder="Enter Address line 2" formControlName="address2" >
             </mat-form-field>
            </div>
 
            <!-- 7th row -->
             <div class="row">
-              <div class="col-6" ngModelGroup="address">
+              <div class="col-6" >
                 <mat-form-field appearance="outline" style="width: 100%">
                   <mat-label>Country:</mat-label>
-                  <mat-select name="country" ngModel>
+                  <mat-select formControlName="country" >
                     <mat-option value="India">India</mat-option>
                     <mat-option value="Australia">Australia</mat-option>
                     <mat-option value="USA">USA</mat-option>
                   </mat-select>
                 </mat-form-field>
               </div>
-              <div class="col-6" ngModelGroup="address">
+              <div class="col-6" >
                 <mat-form-field appearance="outline" style="width: 100%;">
                   <mat-label>City:</mat-label>
-                  <input matInput placeholder="Enter your city" name="city" ngModel>
+                  <input matInput placeholder="Enter your city" formControlName="city" >
                 </mat-form-field>
               </div>
             </div>
             <!-- 8th row -->
              <div class="row">
-              <div class="col-6" ngModelGroup="address">
+              <div class="col-6">
                 <mat-form-field appearance="outline" style="width: 100%;">
                   <mat-label>Region:</mat-label>
-                  <input matInput placeholder="Enter your region" name="region" ngModel>
+                  <input matInput placeholder="Enter your region" formControlName="region" >
                 </mat-form-field>
               </div>
-              <div class="col-6" ngModelGroup="address">
+              <div class="col-6" >
                 <mat-form-field appearance="outline" style="width: 100%;">
                   <mat-label>Postal Code:</mat-label>
-                  <input matInput placeholder="Enter your PIN Code" name="pin" ngModel>
+                  <input matInput placeholder="Enter your PIN Code" formControlName="postalCode" >
                 </mat-form-field>
               </div>
              </div>
              <!-- 9th row -->
               <div class="row text-center mb-5">
                 <div class="col-12">
-                  <button mat-raised-button type="submit" [disabled]="!(registerForm.dirty && registerForm.valid)">Submit</button>
+                  <button mat-raised-button  [disabled]="!(registerForm.dirty && registerForm.valid)" (click)="onClick()">Submit</button>
                 </div>
               </div>
     </form>

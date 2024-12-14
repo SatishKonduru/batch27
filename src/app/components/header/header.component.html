@@ -1,7 +1,7 @@
 <mat-toolbar style="background-color: pink; color: blueviolet">
   <span>Angular 18 - Batch 27</span>
   <span class="mySpace"></span>
-  <span ><mat-icon [routerLink]="'/register-tdf'">add</mat-icon></span>
+  <span ><mat-icon  [matMenuTriggerFor]="menu">add</mat-icon></span>
   <span><mat-icon [routerLink]="'/login'">login</mat-icon></span>
 </mat-toolbar>
 
@@ -44,3 +44,8 @@
     <button mat-raised-button [routerLink]="'/courseDetails'" routerLinkActive="active">Course Details</button>
   </span>
 </mat-toolbar> -->
+
+<mat-menu #menu="matMenu">
+  <button mat-menu-item [routerLink]="'/register-tdf'">Template Driven Form</button>
+  <button mat-menu-item [routerLink]="'/register-rf'">Reactive Form</button>
+</mat-menu>

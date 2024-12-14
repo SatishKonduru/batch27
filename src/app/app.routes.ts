@@ -11,6 +11,7 @@ import { AdminDashboardComponent } from './components/admin-dashboard/admin-dash
 import { authGuard, authGuardChild } from './guards/auth.guard';
 import { unsavedPageGuard } from './guards/unsaved-page.guard';
 import { RegisterTDFComponent } from './components/register-tdf/register-tdf.component';
+import { RegisterRfComponent } from './components/register-rf/register-rf.component';
 
 export const routes: Routes = [
   {
@@ -71,7 +72,10 @@ export const routes: Routes = [
     path: 'register-tdf',
     component: RegisterTDFComponent
   },
-
+  {
+    path: 'register-rf',
+    component: RegisterRfComponent
+  },
 
   {
     path: '**',

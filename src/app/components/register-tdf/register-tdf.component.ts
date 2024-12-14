@@ -13,7 +13,7 @@ import { FormsModule, NgForm } from '@angular/forms';
 @Component({
   selector: 'app-register-tdf',
   standalone: true,
-  imports: [CommonModule, MatFormFieldModule, MatInputModule, MatIconModule, MatToolbarModule, MatDatepickerModule, MatCalendar,MatRadioModule, MatSelectModule,MatButtonModule, FormsModule],
+  imports: [CommonModule, MatFormFieldModule, MatInputModule, MatIconModule, MatToolbarModule, MatDatepickerModule, MatRadioModule, MatSelectModule, MatButtonModule, FormsModule],
   templateUrl: './register-tdf.component.html',
   styleUrl: './register-tdf.component.css'
 })
