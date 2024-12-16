@@ -7,7 +7,7 @@
         <div class="col-6">
           <mat-form-field appearance="outline" style="width: 100%;" >
             <mat-label>First Name: </mat-label>
-            <input matInput placeholder="Enter First Name " formControlName="firstName"  >
+            <input matInput placeholder="Enter First Name " formControlName="firstName">
             <mat-error>
               @if(registerForm.controls.firstName?.touched){
                 First Name required
@@ -73,7 +73,7 @@
           </div>
 
           <!-- 5th row -->
-           <div class="row" ngModelGroup="address">
+           <div class="row" formGroupName="address">
             <label>Address:</label>
             <mat-form-field appearance="outline">
               <mat-label>Address 1</mat-label>
@@ -81,7 +81,7 @@
             </mat-form-field>
            </div>
            <!-- 6rh row -->
-           <div class="row" ngModelGroup="address">
+           <div class="row" formGroupName="address">
             <mat-form-field appearance="outline">
               <mat-label>Address 2</mat-label>
               <input matInput placeholder="Enter Address line 2" formControlName="address2" >
@@ -89,8 +89,8 @@
            </div>
 
            <!-- 7th row -->
-            <div class="row">
-              <div class="col-6" >
+            <div class="row" >
+              <div class="col-6" formGroupName="address">
                 <mat-form-field appearance="outline" style="width: 100%">
                   <mat-label>Country:</mat-label>
                   <mat-select formControlName="country" >
@@ -100,7 +100,7 @@
                   </mat-select>
                 </mat-form-field>
               </div>
-              <div class="col-6" >
+              <div class="col-6" formGroupName="address">
                 <mat-form-field appearance="outline" style="width: 100%;">
                   <mat-label>City:</mat-label>
                   <input matInput placeholder="Enter your city" formControlName="city" >
@@ -109,19 +109,63 @@
             </div>
             <!-- 8th row -->
              <div class="row">
-              <div class="col-6">
+              <div class="col-6" formGroupName="address">
                 <mat-form-field appearance="outline" style="width: 100%;">
                   <mat-label>Region:</mat-label>
                   <input matInput placeholder="Enter your region" formControlName="region" >
                 </mat-form-field>
               </div>
-              <div class="col-6" >
+              <div class="col-6" formGroupName="address">
                 <mat-form-field appearance="outline" style="width: 100%;">
                   <mat-label>Postal Code:</mat-label>
                   <input matInput placeholder="Enter your PIN Code" formControlName="postalCode" >
                 </mat-form-field>
               </div>
              </div>
+
+             <!-- Skills -->
+              <label>Skills: </label>
+              @for(control of registerForm.controls.skills['controls']; track control; let i = $index){
+               <div class="row">
+                <div class="col-8" formArrayName="skills">
+                  <mat-form-field appearance="outline" style="width: 100%;">
+                    <mat-label>Skill</mat-label>
+                    <input matInput [formControlName]="i">
+                  </mat-form-field>
+                </div>
+                <div class="col-4">
+                  <button mat-button (click)="deleteSkill(i)">Delete</button>
+                </div>
+               </div>
+
+              }
+              <button mat-raised-button (click)="addSkill()">Add Skill</button>
+              <br>
+              <label>Experience: </label>
+              @for(exp of registerForm.controls.experience['controls']; track exp; let i = $index){
+                <div  formArrayName="experience">
+                  <div class="row col-12" [formGroupName]="i">
+                    <div class="col-6">
+                      <mat-form-field appearance="outline" style="width: 100%;">
+                        <mat-label>Comapny Name</mat-label>
+                        <input matInput formControlName="cName">
+                      </mat-form-field>
+                    </div>
+                    <div class="col-6">
+                      <mat-form-field appearance="outline" style="width: 100%;">
+                        <mat-label>Location</mat-label>
+                        <input matInput formControlName="location">
+                      </mat-form-field>
+                    </div>
+                  </div>
+                </div>
+              }
+
+              <div class="row text-start">
+                <div class="col-12">
+                  <button mat-stroked-button (click)="addExperience()">Add Experience</button>
+                </div>
+              </div>
              <!-- 9th row -->
               <div class="row text-center mb-5">
                 <div class="col-12">
