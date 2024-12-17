@@ -75,3 +75,27 @@
     <app-comp2></app-comp2>
   </div>
 </div> -->
+<!-- <div class="container text-center">
+  <h3>SIGNALS</h3>
+  <h5>Counter : {{counter().value}}</h5>
+  <button mat-mini-fab (click)="increment()"><mat-icon >add</mat-icon></button>
+  <button mat-mini-fab (click)="decrement()"><mat-icon>remove</mat-icon></button>
+</div> -->
+<!-- <div *ngTemplateOutlet="myTemplate"></div> -->
+<!-- <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate est voluptatem sed! Quod itaque harum nam inventore beatae et aliquid repudiandae accusamus officia nostrum assumenda deserunt id dolores, nemo unde.</h2> -->
+
+<ng-template #myTemplate>
+  <h3>This is a Template</h3>
+  <p>This is a paara inside ng-template</p>
+</ng-template>
+
+<button mat-raised-button (click)="toggle()">Show/Hide</button>
+@if(check){
+  <ng-container>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate magnam delectus quidem explicabo iure repudiandae reiciendis ad facere omnis velit. Illo exercitationem, repellat eveniet laboriosam eligendi alias quaerat numquam velit.</p>
+    <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error velit voluptatem aliquam quis, vero eos, sed inventore veniam excepturi cum repellendus dolorum adipisci maiores quisquam voluptate explicabo beatae quod fugiat.</h3>
+    <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis quasi quia quod dicta temporibus quae. Minima nobis, saepe fuga quo ducimus nisi inventore molestias iure ullam quam, architecto tempora enim.</h5>
+  </ng-container>
+
+}
+

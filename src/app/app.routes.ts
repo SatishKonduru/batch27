@@ -71,10 +71,12 @@ export const routes: Routes = [
   {
     path: 'register-tdf',
     component: RegisterTDFComponent
-  },
+
+    },
   {
     path: 'register-rf',
     component: RegisterRfComponent
+    // loadComponet: () => import ('./components/register-rf/register-rf.component').then(c => c.RegisterRfComponent)
   },
 
   {

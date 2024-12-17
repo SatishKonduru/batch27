@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectorRef, Component, inject, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, inject, OnInit } from '@angular/core';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
@@ -14,7 +14,8 @@ import {MatButtonModule} from '@angular/material/button';
   standalone: true,
   imports: [CommonModule, MatToolbarModule, MatFormFieldModule, MatInputModule, MatDatepickerModule, MatRadioModule, MatSelectModule, ReactiveFormsModule, MatButtonModule],
   templateUrl: './register-rf.component.html',
-  styleUrl: './register-rf.component.css'
+  styleUrl: './register-rf.component.css',
+  // changeDetection: ChangeDetectionStrategy.Default
 })
 export class RegisterRfComponent implements OnInit{
   registerForm : any = FormGroup
